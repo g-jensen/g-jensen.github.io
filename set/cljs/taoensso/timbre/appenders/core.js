@@ -12,14 +12,14 @@ goog.require('taoensso.encore');
  */
 taoensso.timbre.appenders.core.println_appender = (function taoensso$timbre$appenders$core$println_appender(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___12889 = arguments.length;
-var i__4737__auto___12890 = (0);
+var len__4736__auto___14128 = arguments.length;
+var i__4737__auto___14129 = (0);
 while(true){
-if((i__4737__auto___12890 < len__4736__auto___12889)){
-args__4742__auto__.push((arguments[i__4737__auto___12890]));
+if((i__4737__auto___14129 < len__4736__auto___14128)){
+args__4742__auto__.push((arguments[i__4737__auto___14129]));
 
-var G__12891 = (i__4737__auto___12890 + (1));
-i__4737__auto___12890 = G__12891;
+var G__14130 = (i__4737__auto___14129 + (1));
+i__4737__auto___14129 = G__14130;
 continue;
 } else {
 }
@@ -30,13 +30,13 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return taoensso.timbre.appenders.core.println_appender.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(taoensso.timbre.appenders.core.println_appender.cljs$core$IFn$_invoke$arity$variadic = (function (p__12883){
-var vec__12884 = p__12883;
-var _opts = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__12884,(0),null);
+(taoensso.timbre.appenders.core.println_appender.cljs$core$IFn$_invoke$arity$variadic = (function (p__14122){
+var vec__14123 = p__14122;
+var _opts = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__14123,(0),null);
 return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$enabled_QMARK_,true,cljs.core.cst$kw$fn,(function (data){
-var map__12887 = data;
-var map__12887__$1 = (((((!((map__12887 == null))))?(((((map__12887.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__12887.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__12887):map__12887);
-var output_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12887__$1,cljs.core.cst$kw$output_);
+var map__14126 = data;
+var map__14126__$1 = (((((!((map__14126 == null))))?(((((map__14126.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__14126.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14126):map__14126);
+var output_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14126__$1,cljs.core.cst$kw$output_);
 return cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.force(output_)], 0));
 })], null);
 }));
@@ -44,9 +44,9 @@ return cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq
 (taoensso.timbre.appenders.core.println_appender.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(taoensso.timbre.appenders.core.println_appender.cljs$lang$applyTo = (function (seq12882){
+(taoensso.timbre.appenders.core.println_appender.cljs$lang$applyTo = (function (seq14121){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq12882));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq14121));
 }));
 
 /**
@@ -93,14 +93,14 @@ return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq
  */
 taoensso.timbre.appenders.core.console_appender = (function taoensso$timbre$appenders$core$console_appender(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___12903 = arguments.length;
-var i__4737__auto___12904 = (0);
+var len__4736__auto___14142 = arguments.length;
+var i__4737__auto___14143 = (0);
 while(true){
-if((i__4737__auto___12904 < len__4736__auto___12903)){
-args__4742__auto__.push((arguments[i__4737__auto___12904]));
+if((i__4737__auto___14143 < len__4736__auto___14142)){
+args__4742__auto__.push((arguments[i__4737__auto___14143]));
 
-var G__12905 = (i__4737__auto___12904 + (1));
-i__4737__auto___12904 = G__12905;
+var G__14144 = (i__4737__auto___14143 + (1));
+i__4737__auto___14143 = G__14144;
 continue;
 } else {
 }
@@ -111,17 +111,17 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return taoensso.timbre.appenders.core.console_appender.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(taoensso.timbre.appenders.core.console_appender.cljs$core$IFn$_invoke$arity$variadic = (function (p__12893){
-var vec__12894 = p__12893;
-var map__12897 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__12894,(0),null);
-var map__12897__$1 = (((((!((map__12897 == null))))?(((((map__12897.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__12897.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__12897):map__12897);
-var raw_console_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__12897__$1,cljs.core.cst$kw$raw_DASH_console_QMARK_);
+(taoensso.timbre.appenders.core.console_appender.cljs$core$IFn$_invoke$arity$variadic = (function (p__14132){
+var vec__14133 = p__14132;
+var map__14136 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__14133,(0),null);
+var map__14136__$1 = (((((!((map__14136 == null))))?(((((map__14136.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__14136.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__14136):map__14136);
+var raw_console_QMARK_ = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__14136__$1,cljs.core.cst$kw$raw_DASH_console_QMARK_);
 return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$enabled_QMARK_,true,cljs.core.cst$kw$fn,(((!((typeof console !== 'undefined'))))?(function (data){
 return null;
 }):(function (){var level__GT_logger = (function (level){
-var or__4126__auto__ = (function (){var G__12900 = level;
-var G__12900__$1 = (((G__12900 instanceof cljs.core.Keyword))?G__12900.fqn:null);
-switch (G__12900__$1) {
+var or__4126__auto__ = (function (){var G__14139 = level;
+var G__14139__$1 = (((G__14139 instanceof cljs.core.Keyword))?G__14139.fqn:null);
+switch (G__14139__$1) {
 case "trace":
 return console.trace;
 
@@ -151,7 +151,7 @@ return console.info;
 
 break;
 default:
-throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__12900__$1)].join('')));
+throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__14139__$1)].join('')));
 
 }
 })();
@@ -178,9 +178,9 @@ return raw_console_QMARK_;
 })();
 if(cljs.core.truth_(temp__5802__auto__)){
 var raw_console_QMARK___$1 = temp__5802__auto__;
-var output = (function (){var G__12902 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(data,cljs.core.cst$kw$msg_,"",cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.cst$kw$_QMARK_err,null], 0));
-var fexpr__12901 = cljs.core.cst$kw$output_DASH_fn.cljs$core$IFn$_invoke$arity$1(data);
-return (fexpr__12901.cljs$core$IFn$_invoke$arity$1 ? fexpr__12901.cljs$core$IFn$_invoke$arity$1(G__12902) : fexpr__12901.call(null,G__12902));
+var output = (function (){var G__14141 = cljs.core.assoc.cljs$core$IFn$_invoke$arity$variadic(data,cljs.core.cst$kw$msg_,"",cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([cljs.core.cst$kw$_QMARK_err,null], 0));
+var fexpr__14140 = cljs.core.cst$kw$output_DASH_fn.cljs$core$IFn$_invoke$arity$1(data);
+return (fexpr__14140.cljs$core$IFn$_invoke$arity$1 ? fexpr__14140.cljs$core$IFn$_invoke$arity$1(G__14141) : fexpr__14140.call(null,G__14141));
 })();
 var args = (function (){var vargs = cljs.core.cst$kw$vargs.cljs$core$IFn$_invoke$arity$1(data);
 var temp__5802__auto____$1 = cljs.core.cst$kw$_QMARK_err.cljs$core$IFn$_invoke$arity$1(data);
@@ -205,9 +205,9 @@ return null;
 (taoensso.timbre.appenders.core.console_appender.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(taoensso.timbre.appenders.core.console_appender.cljs$lang$applyTo = (function (seq12892){
+(taoensso.timbre.appenders.core.console_appender.cljs$lang$applyTo = (function (seq14131){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq12892));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq(seq14131));
 }));
 
 /**

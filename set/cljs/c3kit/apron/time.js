@@ -15,22 +15,22 @@ return n;
  * Converts seconds to milliseconds
  */
 c3kit.apron.time.seconds = (function c3kit$apron$time$seconds(n){
-var G__20046 = (n * (1000));
-return Math.round(G__20046);
+var G__24847 = (n * (1000));
+return Math.round(G__24847);
 });
 /**
  * Converts minutes to milliseconds
  */
 c3kit.apron.time.minutes = (function c3kit$apron$time$minutes(n){
-var G__20047 = (n * (60000));
-return Math.round(G__20047);
+var G__24848 = (n * (60000));
+return Math.round(G__24848);
 });
 /**
  * Converts hours to milliseconds
  */
 c3kit.apron.time.hours = (function c3kit$apron$time$hours(n){
-var G__20048 = (n * (3600000));
-return Math.round(G__20048);
+var G__24849 = (n * (3600000));
+return Math.round(G__24849);
 });
 /**
  * Converts days to milliseconds
@@ -66,8 +66,8 @@ return (new Date());
  * The offset (milliseconds) between the local timezone and UTC. (AZ -> -7hrs)
  */
 c3kit.apron.time.utc_offset = (function c3kit$apron$time$utc_offset(var_args){
-var G__20050 = arguments.length;
-switch (G__20050) {
+var G__24851 = arguments.length;
+switch (G__24851) {
 case 0:
 return c3kit.apron.time.utc_offset.cljs$core$IFn$_invoke$arity$0();
 
@@ -130,8 +130,8 @@ return c3kit.apron.time.from_epoch((c3kit.apron.time.millis_since_epoch(date) + 
  *   e.g. in AZ: (local 2020 1 1 0 0 0) -> 2020-01-01T07:00:00.000-00:00
  */
 c3kit.apron.time.local = (function c3kit$apron$time$local(var_args){
-var G__20053 = arguments.length;
-switch (G__20053) {
+var G__24854 = arguments.length;
+switch (G__24854) {
 case 3:
 return c3kit.apron.time.local.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -169,8 +169,8 @@ return (new Date(year,(month - (1)),day,hour,minute,second));
  *   e.g. (utc 2020 1 1 0 0 0) -> 2020-01-01T00:00:00.000-00:00
  */
 c3kit.apron.time.utc = (function c3kit$apron$time$utc(var_args){
-var G__20056 = arguments.length;
-switch (G__20056) {
+var G__24857 = arguments.length;
+switch (G__24857) {
 case 3:
 return c3kit.apron.time.utc.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -230,8 +230,8 @@ c3kit.apron.time.leap_year_QMARK_ = (function c3kit$apron$time$leap_year_QMARK_(
 return ((((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.mod(year,(4)))) && ((!(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.mod(year,(100)))))))) || (cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((0),cljs.core.mod(year,(400)))));
 });
 c3kit.apron.time.days_in_month = (function c3kit$apron$time$days_in_month(year,month){
-var G__20058 = month;
-switch (G__20058) {
+var G__24859 = month;
+switch (G__24859) {
 case (0):
 return (31);
 
@@ -285,7 +285,7 @@ return (31);
 
 break;
 default:
-throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__20058)].join('')));
+throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__24859)].join('')));
 
 }
 });
@@ -331,8 +331,8 @@ c3kit.apron.time._js_mod_time_by_units = (function (){var method_table__4619__au
 var prefer_table__4620__auto__ = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentArrayMap.EMPTY);
 var method_cache__4621__auto__ = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentArrayMap.EMPTY);
 var cached_hierarchy__4622__auto__ = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(cljs.core.PersistentArrayMap.EMPTY);
-var hierarchy__4623__auto__ = cljs.core.get.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentArrayMap.EMPTY,cljs.core.cst$kw$hierarchy,(function (){var fexpr__20060 = cljs.core.get_global_hierarchy;
-return (fexpr__20060.cljs$core$IFn$_invoke$arity$0 ? fexpr__20060.cljs$core$IFn$_invoke$arity$0() : fexpr__20060.call(null));
+var hierarchy__4623__auto__ = cljs.core.get.cljs$core$IFn$_invoke$arity$3(cljs.core.PersistentArrayMap.EMPTY,cljs.core.cst$kw$hierarchy,(function (){var fexpr__24861 = cljs.core.get_global_hierarchy;
+return (fexpr__24861.cljs$core$IFn$_invoke$arity$0 ? fexpr__24861.cljs$core$IFn$_invoke$arity$0() : fexpr__24861.call(null));
 })());
 return (new cljs.core.MultiFn(cljs.core.symbol.cljs$core$IFn$_invoke$arity$2("c3kit.apron.time","-js-mod-time-by-units"),(function (time,unit,n,direction){
 return unit;
@@ -340,18 +340,18 @@ return unit;
 })();
 }
 c3kit.apron.time._js_mod_time_by_units.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$days,(function (time,unit,n,direction){
-return time.setDate((function (){var G__20061 = time.getDate();
-var G__20062 = n;
-return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__20061,G__20062) : direction.call(null,G__20061,G__20062));
+return time.setDate((function (){var G__24862 = time.getDate();
+var G__24863 = n;
+return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__24862,G__24863) : direction.call(null,G__24862,G__24863));
 })());
 }));
 c3kit.apron.time._js_mod_time_by_units.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$months,(function (time,unit,n,direction){
 var date = time.getUTCDate();
 time.setUTCDate((1));
 
-time.setUTCMonth((function (){var G__20063 = time.getUTCMonth();
-var G__20064 = n;
-return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__20063,G__20064) : direction.call(null,G__20063,G__20064));
+time.setUTCMonth((function (){var G__24864 = time.getUTCMonth();
+var G__24865 = n;
+return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__24864,G__24865) : direction.call(null,G__24864,G__24865));
 })());
 
 var month = time.getUTCMonth();
@@ -362,9 +362,9 @@ return ((x__4217__auto__ < y__4218__auto__) ? x__4217__auto__ : y__4218__auto__)
 })());
 }));
 c3kit.apron.time._js_mod_time_by_units.cljs$core$IMultiFn$_add_method$arity$3(null,cljs.core.cst$kw$years,(function (time,unit,n,direction){
-return time.setFullYear((function (){var G__20065 = time.getFullYear();
-var G__20066 = n;
-return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__20065,G__20066) : direction.call(null,G__20065,G__20066));
+return time.setFullYear((function (){var G__24866 = time.getFullYear();
+var G__24867 = n;
+return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__24866,G__24867) : direction.call(null,G__24866,G__24867));
 })());
 }));
 /**
@@ -372,10 +372,10 @@ return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invok
  *   a Date, the second argument to be a vector representing the amount of time to be changed,
  *   and the last argument to be either a + or - (indicating which direction to modify time).
  */
-c3kit.apron.time.mod_time_by_units = (function c3kit$apron$time$mod_time_by_units(time,p__20067,direction){
-var vec__20068 = p__20067;
-var unit = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20068,(0),null);
-var n = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__20068,(1),null);
+c3kit.apron.time.mod_time_by_units = (function c3kit$apron$time$mod_time_by_units(time,p__24868,direction){
+var vec__24869 = p__24868;
+var unit = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__24869,(0),null);
+var n = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__24869,(1),null);
 var new_date = (new Date(time.getTime()));
 (c3kit.apron.time._js_mod_time_by_units.cljs$core$IFn$_invoke$arity$4 ? c3kit.apron.time._js_mod_time_by_units.cljs$core$IFn$_invoke$arity$4(new_date,unit,n,direction) : c3kit.apron.time._js_mod_time_by_units.call(null,new_date,unit,n,direction));
 
@@ -389,9 +389,9 @@ return new_date;
  */
 c3kit.apron.time.mod_time = (function c3kit$apron$time$mod_time(time,bit,direction){
 if(typeof bit === 'number'){
-return (new Date((function (){var G__20071 = time.getTime();
-var G__20072 = cljs.core.long$(bit);
-return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__20071,G__20072) : direction.call(null,G__20071,G__20072));
+return (new Date((function (){var G__24872 = time.getTime();
+var G__24873 = cljs.core.long$(bit);
+return (direction.cljs$core$IFn$_invoke$arity$2 ? direction.cljs$core$IFn$_invoke$arity$2(G__24872,G__24873) : direction.call(null,G__24872,G__24873));
 })()));
 } else {
 if(cljs.core.vector_QMARK_(bit)){
@@ -407,14 +407,14 @@ return null;
  */
 c3kit.apron.time.before = (function c3kit$apron$time$before(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___20077 = arguments.length;
-var i__4737__auto___20078 = (0);
+var len__4736__auto___24878 = arguments.length;
+var i__4737__auto___24879 = (0);
 while(true){
-if((i__4737__auto___20078 < len__4736__auto___20077)){
-args__4742__auto__.push((arguments[i__4737__auto___20078]));
+if((i__4737__auto___24879 < len__4736__auto___24878)){
+args__4742__auto__.push((arguments[i__4737__auto___24879]));
 
-var G__20079 = (i__4737__auto___20078 + (1));
-i__4737__auto___20078 = G__20079;
+var G__24880 = (i__4737__auto___24879 + (1));
+i__4737__auto___24879 = G__24880;
 continue;
 } else {
 }
@@ -426,19 +426,19 @@ return c3kit.apron.time.before.cljs$core$IFn$_invoke$arity$variadic((arguments[(
 });
 
 (c3kit.apron.time.before.cljs$core$IFn$_invoke$arity$variadic = (function (time,bits){
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p1__20073_SHARP_,p2__20074_SHARP_){
-return c3kit.apron.time.mod_time(p1__20073_SHARP_,p2__20074_SHARP_,cljs.core._);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p1__24874_SHARP_,p2__24875_SHARP_){
+return c3kit.apron.time.mod_time(p1__24874_SHARP_,p2__24875_SHARP_,cljs.core._);
 }),time,bits);
 }));
 
 (c3kit.apron.time.before.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(c3kit.apron.time.before.cljs$lang$applyTo = (function (seq20075){
-var G__20076 = cljs.core.first(seq20075);
-var seq20075__$1 = cljs.core.next(seq20075);
+(c3kit.apron.time.before.cljs$lang$applyTo = (function (seq24876){
+var G__24877 = cljs.core.first(seq24876);
+var seq24876__$1 = cljs.core.next(seq24876);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__20076,seq20075__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__24877,seq24876__$1);
 }));
 
 /**
@@ -447,14 +447,14 @@ return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__20076,seq20075
  */
 c3kit.apron.time.after = (function c3kit$apron$time$after(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___20084 = arguments.length;
-var i__4737__auto___20085 = (0);
+var len__4736__auto___24885 = arguments.length;
+var i__4737__auto___24886 = (0);
 while(true){
-if((i__4737__auto___20085 < len__4736__auto___20084)){
-args__4742__auto__.push((arguments[i__4737__auto___20085]));
+if((i__4737__auto___24886 < len__4736__auto___24885)){
+args__4742__auto__.push((arguments[i__4737__auto___24886]));
 
-var G__20086 = (i__4737__auto___20085 + (1));
-i__4737__auto___20085 = G__20086;
+var G__24887 = (i__4737__auto___24886 + (1));
+i__4737__auto___24886 = G__24887;
 continue;
 } else {
 }
@@ -466,19 +466,19 @@ return c3kit.apron.time.after.cljs$core$IFn$_invoke$arity$variadic((arguments[(0
 });
 
 (c3kit.apron.time.after.cljs$core$IFn$_invoke$arity$variadic = (function (time,bits){
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p1__20080_SHARP_,p2__20081_SHARP_){
-return c3kit.apron.time.mod_time(p1__20080_SHARP_,p2__20081_SHARP_,cljs.core._PLUS_);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p1__24881_SHARP_,p2__24882_SHARP_){
+return c3kit.apron.time.mod_time(p1__24881_SHARP_,p2__24882_SHARP_,cljs.core._PLUS_);
 }),time,bits);
 }));
 
 (c3kit.apron.time.after.cljs$lang$maxFixedArity = (1));
 
 /** @this {Function} */
-(c3kit.apron.time.after.cljs$lang$applyTo = (function (seq20082){
-var G__20083 = cljs.core.first(seq20082);
-var seq20082__$1 = cljs.core.next(seq20082);
+(c3kit.apron.time.after.cljs$lang$applyTo = (function (seq24883){
+var G__24884 = cljs.core.first(seq24883);
+var seq24883__$1 = cljs.core.next(seq24883);
 var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__20083,seq20082__$1);
+return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__24884,seq24883__$1);
 }));
 
 c3kit.apron.time.earlier_QMARK_ = c3kit.apron.time.before_QMARK_;

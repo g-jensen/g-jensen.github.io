@@ -12,11 +12,11 @@ goog.require('cognitect.transit');
  * Convenience.  Convert the form to EDN
  */
 c3kit.apron.utilc.__GT_edn = (function c3kit$apron$utilc$__GT_edn(v){
-var G__21835 = v;
-if((G__21835 == null)){
+var G__27997 = v;
+if((G__27997 == null)){
 return null;
 } else {
-return cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([G__21835], 0));
+return cljs.core.pr_str.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([G__27997], 0));
 }
 });
 /**
@@ -41,8 +41,8 @@ return parseInt(hex,(16));
  * Give a list of entities with unique :id's, return a map with the ids as keys and the entities as values
  */
 c3kit.apron.utilc.index_by_id = (function c3kit$apron$utilc$index_by_id(entities){
-return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p1__21836_SHARP_,p2__21837_SHARP_){
-return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__21836_SHARP_,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p2__21837_SHARP_),p2__21837_SHARP_);
+return cljs.core.reduce.cljs$core$IFn$_invoke$arity$3((function (p1__27998_SHARP_,p2__27999_SHARP_){
+return cljs.core.assoc.cljs$core$IFn$_invoke$arity$3(p1__27998_SHARP_,cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p2__27999_SHARP_),p2__27999_SHARP_);
 }),cljs.core.PersistentArrayMap.EMPTY,entities);
 });
 /**
@@ -71,7 +71,7 @@ throw cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2("Missing :kind",entity);
  */
 c3kit.apron.utilc.__GT_uuid_or_nil = (function c3kit$apron$utilc$__GT_uuid_or_nil(uuid_str){
 try{return c3kit.apron.schema.__GT_uuid(uuid_str);
-}catch (e21838){var _ = e21838;
+}catch (e28000){var _ = e28000;
 return null;
 }});
 c3kit.apron.utilc.transit_reader = cognitect.transit.reader.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$json,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$handlers,new cljs.core.PersistentArrayMap(null, 2, ["f",parseFloat,"n",parseInt], null)], null));
@@ -80,8 +80,8 @@ c3kit.apron.utilc.transit_writer = cognitect.transit.writer.cljs$core$IFn$_invok
  * Convert data into transit string
  */
 c3kit.apron.utilc.__GT_transit = (function c3kit$apron$utilc$__GT_transit(var_args){
-var G__21840 = arguments.length;
-switch (G__21840) {
+var G__28002 = arguments.length;
+switch (G__28002) {
 case 3:
 return c3kit.apron.utilc.__GT_transit.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -110,8 +110,8 @@ return cognitect.transit.write(c3kit.apron.utilc.transit_writer,data);
  * Convert transit string into data
  */
 c3kit.apron.utilc._LT__transit = (function c3kit$apron$utilc$_LT__transit(var_args){
-var G__21843 = arguments.length;
-switch (G__21843) {
+var G__28005 = arguments.length;
+switch (G__28005) {
 case 3:
 return c3kit.apron.utilc._LT__transit.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -147,11 +147,11 @@ return JSON.stringify(cljs.core.clj__GT_js(v));
  * Convert JSON into clj data structure.
  */
 c3kit.apron.utilc._LT__json = (function c3kit$apron$utilc$_LT__json(v){
-if(cljs.core.truth_((function (){var G__21845 = v;
-if((G__21845 == null)){
+if(cljs.core.truth_((function (){var G__28007 = v;
+if((G__28007 == null)){
 return null;
 } else {
-return (c3kit.apron.corec.not_blank_QMARK_.cljs$core$IFn$_invoke$arity$1 ? c3kit.apron.corec.not_blank_QMARK_.cljs$core$IFn$_invoke$arity$1(G__21845) : c3kit.apron.corec.not_blank_QMARK_.call(null,G__21845));
+return (c3kit.apron.corec.not_blank_QMARK_.cljs$core$IFn$_invoke$arity$1 ? c3kit.apron.corec.not_blank_QMARK_.cljs$core$IFn$_invoke$arity$1(G__28007) : c3kit.apron.corec.not_blank_QMARK_.call(null,G__28007));
 }
 })())){
 return cljs.core.js__GT_clj.cljs$core$IFn$_invoke$arity$1(JSON.parse(v));
@@ -188,8 +188,8 @@ return clojure.string.join.cljs$core$IFn$_invoke$arity$2("\r\n",cljs.core.map.cl
  * Sanatize string into valid filename
  */
 c3kit.apron.utilc.__GT_filename = (function c3kit$apron$utilc$__GT_filename(var_args){
-var G__21847 = arguments.length;
-switch (G__21847) {
+var G__28009 = arguments.length;
+switch (G__28009) {
 case 1:
 return c3kit.apron.utilc.__GT_filename.cljs$core$IFn$_invoke$arity$1((arguments[(0)]));
 

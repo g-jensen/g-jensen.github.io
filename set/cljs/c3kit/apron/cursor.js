@@ -3,8 +3,8 @@ goog.provide('c3kit.apron.cursor');
 goog.require('cljs.core');
 goog.require('cljs.core.constants');
 c3kit.apron.cursor.do_swap_BANG_ = (function c3kit$apron$cursor$do_swap_BANG_(var_args){
-var G__12910 = arguments.length;
-switch (G__12910) {
+var G__7002 = arguments.length;
+switch (G__7002) {
 case 3:
 return c3kit.apron.cursor.do_swap_BANG_.cljs$core$IFn$_invoke$arity$3((arguments[(0)]),(arguments[(1)]),(arguments[(2)]));
 
@@ -48,9 +48,9 @@ return cljs.core.apply.cljs$core$IFn$_invoke$arity$5(f,v,x,y,more);
 (c3kit.apron.cursor.do_swap_BANG_.cljs$lang$maxFixedArity = 6);
 
 c3kit.apron.cursor.swap_vals_result = (function c3kit$apron$cursor$swap_vals_result(path,result){
-var vec__12912 = result;
-var o = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__12912,(0),null);
-var n = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__12912,(1),null);
+var vec__7004 = result;
+var o = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__7004,(0),null);
+var n = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__7004,(1),null);
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(o,path),cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(n,path)], null);
 });
 c3kit.apron.cursor.do_reset_BANG_ = (function c3kit$apron$cursor$do_reset_BANG_(base,path,new_value){
@@ -137,11 +137,11 @@ return cljs.core._notify_watches(self__.base,oldval,newval);
 var self__ = this;
 var this$__$1 = this;
 return cljs.core._add_watch(self__.base,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [self__.path,key], null),(function (k,r,o,n){
-var G__12915 = key;
-var G__12916 = this$__$1;
-var G__12917 = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(o,self__.path);
-var G__12918 = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(n,self__.path);
-return (f.cljs$core$IFn$_invoke$arity$4 ? f.cljs$core$IFn$_invoke$arity$4(G__12915,G__12916,G__12917,G__12918) : f.call(null,G__12915,G__12916,G__12917,G__12918));
+var G__7007 = key;
+var G__7008 = this$__$1;
+var G__7009 = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(o,self__.path);
+var G__7010 = cljs.core.get_in.cljs$core$IFn$_invoke$arity$2(n,self__.path);
+return (f.cljs$core$IFn$_invoke$arity$4 ? f.cljs$core$IFn$_invoke$arity$4(G__7007,G__7008,G__7009,G__7010) : f.call(null,G__7007,G__7008,G__7009,G__7010));
 }));
 }));
 

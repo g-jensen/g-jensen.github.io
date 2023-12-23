@@ -10,10 +10,10 @@ var component__$1 = cljs.core.deref(component.parent);
 var level = (0);
 while(true){
 if(cljs.core.truth_(component__$1)){
-var G__21958 = cljs.core.deref(component__$1.parent);
-var G__21959 = (level + (1));
-component__$1 = G__21958;
-level = G__21959;
+var G__28128 = cljs.core.deref(component__$1.parent);
+var G__28129 = (level + (1));
+component__$1 = G__28128;
+level = G__28129;
 continue;
 } else {
 return level;
@@ -64,8 +64,8 @@ var self__ = this;
 var this$__$1 = this;
 var characteristic = result.characteristic;
 var level = speclj.report.documentation.level_of(characteristic);
-cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([speclj.report.documentation.maybe_focused(characteristic,(function (){var G__21960 = speclj.reporting.indent.cljs$core$IFn$_invoke$arity$variadic((level - (1)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["- ",characteristic.name], 0));
-return (speclj.reporting.green.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.green.cljs$core$IFn$_invoke$arity$1(G__21960) : speclj.reporting.green.call(null,G__21960));
+cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([speclj.report.documentation.maybe_focused(characteristic,(function (){var G__28130 = speclj.reporting.indent.cljs$core$IFn$_invoke$arity$variadic((level - (1)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["- ",characteristic.name], 0));
+return (speclj.reporting.green.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.green.cljs$core$IFn$_invoke$arity$1(G__28130) : speclj.reporting.green.call(null,G__28130));
 })())], 0));
 
 return cljs.core.flush();
@@ -76,8 +76,8 @@ var self__ = this;
 var this$__$1 = this;
 var characteristic = result.characteristic;
 var level = speclj.report.documentation.level_of(characteristic);
-cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__21961 = speclj.reporting.indent.cljs$core$IFn$_invoke$arity$variadic((level - (1)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["- ",characteristic.name," (PENDING: ",speclj.platform.error_message(result.exception),")"], 0));
-return (speclj.reporting.yellow.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.yellow.cljs$core$IFn$_invoke$arity$1(G__21961) : speclj.reporting.yellow.call(null,G__21961));
+cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__28131 = speclj.reporting.indent.cljs$core$IFn$_invoke$arity$variadic((level - (1)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["- ",characteristic.name," (PENDING: ",speclj.platform.error_message(result.exception),")"], 0));
+return (speclj.reporting.yellow.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.yellow.cljs$core$IFn$_invoke$arity$1(G__28131) : speclj.reporting.yellow.call(null,G__28131));
 })()], 0));
 
 return cljs.core.flush();
@@ -88,8 +88,8 @@ var self__ = this;
 var this$__$1 = this;
 var characteristic = result.characteristic;
 var level = speclj.report.documentation.level_of(characteristic);
-cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([speclj.report.documentation.maybe_focused(characteristic,(function (){var G__21962 = speclj.reporting.indent.cljs$core$IFn$_invoke$arity$variadic((level - (1)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["- ",characteristic.name," (FAILED)"], 0));
-return (speclj.reporting.red.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.red.cljs$core$IFn$_invoke$arity$1(G__21962) : speclj.reporting.red.call(null,G__21962));
+cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([speclj.report.documentation.maybe_focused(characteristic,(function (){var G__28132 = speclj.reporting.indent.cljs$core$IFn$_invoke$arity$variadic((level - (1)),cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2(["- ",characteristic.name," (FAILED)"], 0));
+return (speclj.reporting.red.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.red.cljs$core$IFn$_invoke$arity$1(G__28132) : speclj.reporting.red.call(null,G__28132));
 })())], 0));
 
 return cljs.core.flush();
@@ -98,8 +98,8 @@ return cljs.core.flush();
 (speclj.report.documentation.DocumentationReporter.prototype.speclj$reporting$Reporter$report_error$arity$2 = (function (this$,result){
 var self__ = this;
 var this$__$1 = this;
-return cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__21963 = result.exception.toString();
-return (speclj.reporting.red.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.red.cljs$core$IFn$_invoke$arity$1(G__21963) : speclj.reporting.red.call(null,G__21963));
+return cljs.core.println.cljs$core$IFn$_invoke$arity$variadic(cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (){var G__28133 = result.exception.toString();
+return (speclj.reporting.red.cljs$core$IFn$_invoke$arity$1 ? speclj.reporting.red.cljs$core$IFn$_invoke$arity$1(G__28133) : speclj.reporting.red.call(null,G__28133));
 })()], 0));
 }));
 

@@ -1,6 +1,20 @@
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.left-container {
+  float: right;
+  text-align: right;
+}
+
 .center {
   display: flex;
   justify-content: center;
+}
+
+.color-blind-indicator {
+  text-align: center;
 }
 
 .card-container {
@@ -9,6 +23,7 @@
 }
 
 .card {
+  position: relative;
   transition: transform .2s;
   margin: 1vw;
   border-style: solid;

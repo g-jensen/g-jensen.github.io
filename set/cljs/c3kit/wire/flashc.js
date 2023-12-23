@@ -4,8 +4,8 @@ goog.require('cljs.core');
 goog.require('cljs.core.constants');
 goog.require('c3kit.apron.corec');
 goog.require('c3kit.apron.schema');
-c3kit.wire.flashc.flash_schema = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$level,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$type,cljs.core.cst$kw$keyword], null),cljs.core.cst$kw$text,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$type,cljs.core.cst$kw$ignore], null),cljs.core.cst$kw$persist,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$type,cljs.core.cst$kw$boolean], null),cljs.core.cst$kw$id,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$type,cljs.core.cst$kw$string,cljs.core.cst$kw$coerce,(function (p1__19311_SHARP_){
-var or__4126__auto__ = p1__19311_SHARP_;
+c3kit.wire.flashc.flash_schema = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$level,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$type,cljs.core.cst$kw$keyword], null),cljs.core.cst$kw$text,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$type,cljs.core.cst$kw$ignore], null),cljs.core.cst$kw$persist,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$type,cljs.core.cst$kw$boolean], null),cljs.core.cst$kw$id,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$type,cljs.core.cst$kw$string,cljs.core.cst$kw$coerce,(function (p1__23383_SHARP_){
+var or__4126__auto__ = p1__23383_SHARP_;
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
 } else {
@@ -16,8 +16,8 @@ c3kit.wire.flashc.conform_BANG_ = (function c3kit$wire$flashc$conform_BANG_(flas
 return c3kit.apron.schema.conform_BANG_(c3kit.wire.flashc.flash_schema,flash);
 });
 c3kit.wire.flashc.create = (function c3kit$wire$flashc$create(var_args){
-var G__19313 = arguments.length;
-switch (G__19313) {
+var G__23385 = arguments.length;
+switch (G__23385) {
 case 2:
 return c3kit.wire.flashc.create.cljs$core$IFn$_invoke$arity$2((arguments[(0)]),(arguments[(1)]));
 

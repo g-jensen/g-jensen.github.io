@@ -51,22 +51,22 @@ return x;
 return cljs.core.set(x);
 }
 });
-var ensure_set_11666 = taoensso.truss.impl.ensure_set;
+var ensure_set_11674 = taoensso.truss.impl.ensure_set;
 taoensso.truss.impl.ks_EQ_ = (function taoensso$truss$impl$ks_EQ_(ks,m){
-return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.set(cljs.core.keys(m)),(ensure_set_11666.cljs$core$IFn$_invoke$arity$1 ? ensure_set_11666.cljs$core$IFn$_invoke$arity$1(ks) : ensure_set_11666.call(null,ks)));
+return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.set(cljs.core.keys(m)),(ensure_set_11674.cljs$core$IFn$_invoke$arity$1 ? ensure_set_11674.cljs$core$IFn$_invoke$arity$1(ks) : ensure_set_11674.call(null,ks)));
 });
 
 taoensso.truss.impl.ks_LT__EQ_ = (function taoensso$truss$impl$ks_LT__EQ_(ks,m){
-return clojure.set.subset_QMARK_(cljs.core.set(cljs.core.keys(m)),(ensure_set_11666.cljs$core$IFn$_invoke$arity$1 ? ensure_set_11666.cljs$core$IFn$_invoke$arity$1(ks) : ensure_set_11666.call(null,ks)));
+return clojure.set.subset_QMARK_(cljs.core.set(cljs.core.keys(m)),(ensure_set_11674.cljs$core$IFn$_invoke$arity$1 ? ensure_set_11674.cljs$core$IFn$_invoke$arity$1(ks) : ensure_set_11674.call(null,ks)));
 });
 
 taoensso.truss.impl.ks_GT__EQ_ = (function taoensso$truss$impl$ks_GT__EQ_(ks,m){
-return clojure.set.superset_QMARK_(cljs.core.set(cljs.core.keys(m)),(ensure_set_11666.cljs$core$IFn$_invoke$arity$1 ? ensure_set_11666.cljs$core$IFn$_invoke$arity$1(ks) : ensure_set_11666.call(null,ks)));
+return clojure.set.superset_QMARK_(cljs.core.set(cljs.core.keys(m)),(ensure_set_11674.cljs$core$IFn$_invoke$arity$1 ? ensure_set_11674.cljs$core$IFn$_invoke$arity$1(ks) : ensure_set_11674.call(null,ks)));
 });
 
 taoensso.truss.impl.ks_nnil_QMARK_ = (function taoensso$truss$impl$ks_nnil_QMARK_(ks,m){
-return taoensso.truss.impl.revery_QMARK_((function (p1__11665_SHARP_){
-return taoensso.truss.impl.some_QMARK_(cljs.core.get.cljs$core$IFn$_invoke$arity$2(m,p1__11665_SHARP_));
+return taoensso.truss.impl.revery_QMARK_((function (p1__11673_SHARP_){
+return taoensso.truss.impl.some_QMARK_(cljs.core.get.cljs$core$IFn$_invoke$arity$2(m,p1__11673_SHARP_));
 }),ks);
 });
 taoensso.truss.impl.default_error_fn = (function taoensso$truss$impl$default_error_fn(data_){
@@ -78,11 +78,11 @@ taoensso.truss.impl._STAR_error_fn_STAR_ = taoensso.truss.impl.default_error_fn;
 taoensso.truss.impl.safe = (function taoensso$truss$impl$safe(pred){
 return (function (x){
 try{return (pred.cljs$core$IFn$_invoke$arity$1 ? pred.cljs$core$IFn$_invoke$arity$1(x) : pred.call(null,x));
-}catch (e11667){if((e11667 instanceof Error)){
-var _ = e11667;
+}catch (e11675){if((e11675 instanceof Error)){
+var _ = e11675;
 return null;
 } else {
-throw e11667;
+throw e11675;
 
 }
 }});
@@ -158,7 +158,7 @@ taoensso.truss.impl._invar_violation_BANG_ = (function taoensso$truss$impl$_inva
 var temp__5804__auto__ = taoensso.truss.impl._STAR_error_fn_STAR_;
 if(cljs.core.truth_(temp__5804__auto__)){
 var error_fn = temp__5804__auto__;
-var G__11670 = (new cljs.core.Delay((function (){
+var G__11678 = (new cljs.core.Delay((function (){
 var instant = (new Date());
 var undefn_arg_QMARK_ = (arg instanceof taoensso.truss.impl.WrappedError);
 var arg_val = ((undefn_arg_QMARK_)?cljs.core.cst$sym$truss_SLASH_undefined_DASH_arg:arg);
@@ -185,11 +185,11 @@ var arg__$1 = (function (){var temp__5804__auto____$1 = _QMARK_data_fn;
 if(cljs.core.truth_(temp__5804__auto____$1)){
 var data_fn = temp__5804__auto____$1;
 try{return (data_fn.cljs$core$IFn$_invoke$arity$0 ? data_fn.cljs$core$IFn$_invoke$arity$0() : data_fn.call(null));
-}catch (e11671){if((e11671 instanceof Error)){
-var e = e11671;
+}catch (e11679){if((e11679 instanceof Error)){
+var e = e11679;
 return new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$truss_SLASH_error,e], null);
 } else {
-throw e11671;
+throw e11679;
 
 }
 }} else {
@@ -227,7 +227,7 @@ return output__$1;
 })();
 return output__$2;
 }),null));
-return (error_fn.cljs$core$IFn$_invoke$arity$1 ? error_fn.cljs$core$IFn$_invoke$arity$1(G__11670) : error_fn.call(null,G__11670));
+return (error_fn.cljs$core$IFn$_invoke$arity$1 ? error_fn.cljs$core$IFn$_invoke$arity$1(G__11678) : error_fn.call(null,G__11678));
 } else {
 return null;
 }
