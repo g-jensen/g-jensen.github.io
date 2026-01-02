@@ -1,0 +1,10 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Cljs & Speclj</h1><p>2023-08-09</p><!---
+Tags:
+[:clojure]
+--><p>Speclj, the Clojure testing framework I am using, also works with ClojureScript. This may surprise you
+since ClojureScript doesn't exactly "run". It simply transpiles to Javascript.</p><p>Well, to get testing working, I used Michael Whatcott's <a href="https://github.com/mdwhatcott/cljs-sample-project">cljs-sample-project</a>.
+This includes a <code>runner</code> that handles everything, but what I think is really cool is how it works.
+The ClojureScript is transpiled to Javascript. The tests then run inside a
+<a href="https://phantomjs.org/">PhantomJS</a> instance to output in the console. PhantomJS is a program that
+simulates vanilla Javascript running in the terminal. I just found that this was a cool way to connect
+multiple technologies to make a cohesive tool.</p></div></div></body>

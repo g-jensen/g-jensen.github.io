@@ -1,0 +1,13 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Deftype in Clojure</h1><p>2023-05-23</p><!---
+Tags:
+[:clojure]
+--><p><code>deftype</code> in Clojure is a way to abstract data away into a structure. It is comparable to <code>struct</code> in C.</p><p>An example of <code>struct</code> in C</p><pre><code class="language-c">typedef struct Rectangle {
+    int length;
+    int width;
+} Rectangle;
+</code></pre><p>is easily convertible to an example of <code>deftype</code> in Clojure</p><pre><code class="language-clojure">(deftype Rectangle [length width])
+</code></pre><p>and the uses are very similar as well</p><pre><code class="language-c">Rectangle r = {5, 4};
+printf("%d", r.length*r.width);
+</code></pre><pre><code class="language-clojure">(let [r (Rectangle. 5 4)]
+     (println (* (.length r) (.width r))))
+</code></pre></div></div></body>

@@ -1,1 +1,0 @@
-{:infer-externs true, :output-dir "resources/public/cljs/", :cache-analysis false, :sources ["spec" "src"], :optimizations :advanced, :cljs.closure/watch-triggered-build? true, :verbose false, :output-to "resources/public/cljs/c3kit_scaffold.js", :specs false, :libs ["src/js/"], :pretty-print false}

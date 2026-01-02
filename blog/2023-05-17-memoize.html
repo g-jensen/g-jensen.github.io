@@ -1,0 +1,24 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Memoize in Clojure</h1><p>2023-05-17</p><!---
+Tags:
+[:clojure]
+--><p>Memoization is the process of caching expensive calculations so that they can later be used to speed
+up a program.</p><p>An example of this in Clojure can be seen with an implementation of this <code>fib</code> function, which returns the
+nth Fibonacci number.</p><pre><code class="language-clojure">(defn fib [n]
+  (cond
+    (<= n 0) 0
+    (= n 1) 1
+    :else (+ (fib (- n 1)) (fib (- n 2)))))
+</code></pre><p>We can see that it simply uses the recursive definition of the nth Fibonacci number. But this is actually
+pretty slow because the recursion is calculating the same values multiple times.</p><p>For example:</p><pre><code class="language-clojure">(time (fib 40)) ;=>"Elapsed time: 964.588292 msecs"
+                ;=>102334155
+</code></pre><p>A way to optimize this in terms of speed would be to create a memoized version of the <code>fib</code> function. This will speed it up,
+but also take up more memory during runtime.</p><pre><code class="language-clojure">(def fib-memoize
+  (memoize
+    #(cond
+     (<= % 0) 0
+     (= % 1) 1
+     :else (+ (fib-memoize (- % 1)) (fib-memoize (- % 2))))))
+</code></pre><p>Note that we can't just do <code>(def fib-memoize (memoize fib))</code> because that will only memoize the top
+call of <code>fib</code> and none of the other recursive ones.</p><p>This memoization greatly increases the speed of the calculation:</p><pre><code class="language-clojure">(time (fib-memoize 40)) ;=>"Elapsed time: 0.352458 msecs"
+                        ;=>102334155
+</code></pre></div></div></body>

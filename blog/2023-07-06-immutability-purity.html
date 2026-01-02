@@ -1,0 +1,11 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Immutability and Purity</h1><p>2023-07-06</p><!---
+Tags:
+[:misc]
+--><p>Two defining features of a functional programming language are immutability and purity.</p><p>Immutability refers to data that is created during the runtime of the program.
+Immutability means that once data is created, it cannot be altered. This means that to "change" data, one must create
+new data that has the "changes" that they desire. If you are coming from a non-functional language, then
+this idea fundamentally changes (get it) how you think about programming an algorithm.</p><p>Purity refers specifically to functions. A pure function has no "side effects." This means that it doesn't
+change any data or do anything that is outside the function. A pure function will do the same thing
+100% of the time given the same parameters. This makes debugging function easy because all you ever need
+to know about a given function is what's inside it. It also makes threading easy because functions will
+never have side effects that may impact other threads.</p></div></div></body>

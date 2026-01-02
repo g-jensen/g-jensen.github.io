@@ -1,0 +1,12 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Building Jars</h1><p>2023-08-02</p><!---
+Tags:
+[:clojure]
+--><p>IntelliJ and Java make it pretty easy to build a Java project into a <code>.jar</code> file. Once I did this with my
+HTTP Server program, all I needed to do was import it into my Clojure TicTacToe Project.</p><p>With Leiningen, building a Clojure project to a <code>.jar</code> is also pretty easy, it's just one command. But since
+I've recently switched to Deps, the Leiningen ways don't work. The Deps way didn't turn out to be that
+bad, though. There are just a few steps.</p><p>To build to a <code>.jar</code> with Deps, I need a
+<code>build.clj</code> file which defines how to build the project. A sample can be found <a href="https://clojure.org/guides/tools_build#_compiled_uberjar_application_build">here</a>
+It uses the <code>tools.build</code> library to customize the build. With a completed <code>build.clj</code> file, all that
+is left is to add an alias to <code>deps.edn</code> to point to that build file like so:</p><pre><code>{:build {:deps {io.github.clojure/tools.build {:git/tag "TAG" :git/sha "SHA"}}
+         :ns-default build}}
+</code></pre></div></div></body>

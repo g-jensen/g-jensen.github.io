@@ -1,0 +1,18 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Cljs Reagent</h1><p>2023-08-10</p><!---
+Tags:
+[:clojure]
+--><p>Reagent is a library for ClojureScript that allows the creation of React components. I use Reagent for
+my TicTacToe ClojureScript implementation, and it is very easy to create a reactive UI. Reagent uses its own
+<code>atom</code> implementation to keep track of state and update components when that state changes.</p><p>If I require Reagent</p><pre><code class="language-clojure">(require '[reagent.core :as r])
+(require '[reagent.dom :as rd])
+</code></pre><p>I can define a Reagent atom:</p><pre><code class="language-clojure">(def click-count (r/atom 0))
+</code></pre><p>And create a component that uses that atom:</p><pre><code class="language-clojure">(defn counting-component []
+  [:div
+   [:label @click-count]
+   [:input {:type "button" :value "Click me!"
+            :on-click #(swap! click-count inc)}]])
+</code></pre><p>And render that component:</p><pre><code class="language-clojure">(defn ^:export main []
+  (rd/render [counting-component] (.getElementById js/document "app")))
+
+(main)
+</code></pre><p>This creates a button that has a counter that updates when the button is pressed.</p></div></div></body>

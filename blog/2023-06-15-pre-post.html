@@ -1,0 +1,14 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Pre and Post in Clojure</h1><p>2023-06-15</p><!---
+Tags:
+[:clojure]
+--><p>Pre-conditions are boolean expressions that must evaluate to <code>true</code> before a function is evaluated and
+post-conditions are the same thing but for after a function's evaluation. If a pre or post condition is
+violated, an error will be thrown. Adding pre and post conditions to a function can allow programmers
+to ensure dynamic type safety. A pre-condition in Clojure looks like this:</p><pre><code class="language-clojure">(defn factorial [n]
+  {:pre [(>= n 0)]}
+  (if (= n 0)
+    1
+    (* n (factorial (dec n)))))
+</code></pre><p>Here, the precondition is that <code>n</code> is greater than or equal to 0, so if I do <code>(factorial -1)</code> the following error is thrown:</p><pre><code class="language-clojure">AssertionError Assert failed: (>= n 0)
+</code></pre><p>This style of programming is called Design by Contract, though usually Test Driven Development is used
+over Design by Contract to ensure dynamic type safety.</p></div></div></body>

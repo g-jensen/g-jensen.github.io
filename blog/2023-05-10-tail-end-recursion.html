@@ -1,0 +1,21 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Tail End Recursion</h1><p>2023-05-10</p><p>In Clojure, there aren't really iterative loops. Instead, we can get
+loop functionality through recursion.</p><p>The behavior of a simple <code>for</code> loop in C</p><pre><code class="language-c">for (int i = 0; i < 10; i++) {
+    ...
+}
+</code></pre><p>can be translated into a <code>loop</code> form in Clojure like so:</p><pre><code class="language-clojure">(loop [i 0]
+  (if (< i 10)
+    (do (...)
+        (recur (inc i)))))
+</code></pre><p>The call to <code>recur</code> evaluates the second parameter of <code>loop</code> again with the
+new specified <code>i</code> value</p><p><code>recur</code> utilizes Tail End Recursion, which works by having <code>recur</code> be the last
+call in the loop. This allows the recursion to essentially be treated like
+a conventional loop as to not cause a stack overflow.</p><p>A simple use case can be seen in the implementation of the <code>factorial</code> function.</p><p>An implementation like this</p><pre><code class="language-clojure">(defn factorial [n]
+  (if (<= n 1)
+    1
+    (*' n (factorial (dec n)))))
+</code></pre><p>has the possibility of blowing the stack, while an implementation like this</p><pre><code class="language-clojure">(defn factorial-recur [n]
+  (loop [n n acc 1]
+    (if (<= n 1)
+      acc
+      (recur (dec n) (*' n acc)))))
+</code></pre><p>does not.</p></div></div></body>

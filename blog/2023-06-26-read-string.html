@@ -1,0 +1,23 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Clojure read-string</h1><p>2023-06-26</p><!---
+Tags:
+[:clojure]
+--><p>In my TicTacToe game, I need to store previous games in a database so that they can be played later.
+The object that I store a game as look something like:</p><pre><code>{:date "Thu Jun 26 12:30:26 EDT 2023"
+ :board [\_ \_ \_ \_ \_ \_ \_ \_ \_]
+ :gamemode {:mode :pvc :difficulty :hard}}
+</code></pre><p>Of course if we stored a pvp game, then we would not need the <code>:difficulty</code> part of <code>:gamemode</code>. But this is the
+general structure.</p><p>A problem arises when trying to read in the <code>:board</code> and <code>:gamemode</code> because it reads them in as strings
+when we want them to be a vector and map respectively.</p><p>So the internal data structure after reading in from the database might look like:</p><pre><code>{:date "Thu Jun 26 12:30:26 EDT 2023"
+ :board "[\\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_]"
+ :gamemode "{:mode :pvc :difficulty :hard}"}
+</code></pre><p>This is where <code>read-string</code> comes in.</p><p>I can just call <code>read-string</code> on the board or gamemode and it will convert it to the correct type with
+data intact.</p><p>As an example:</p><pre><code class="language-clojure">(def obj {:date "Thu Jun 26 12:30:26 EDT 2023"
+          :board "[\\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_ \\_]"
+          :gamemode "{:mode :pvc :difficulty :hard}"})
+
+(read-string (:board obj))
+; => [\_ \_ \_ \_ \_ \_ \_ \_ \_]
+
+(read-string (:gamemode obj))
+; => {:mode :pvc :difficulty :hard}
+</code></pre></div></div></body>

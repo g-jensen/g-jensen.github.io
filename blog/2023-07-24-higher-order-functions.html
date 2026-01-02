@@ -1,0 +1,8 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Higher Order Functions</h1><p>2023-07-24</p><!---
+Tags:
+[:misc]
+--><p>The final feature that implemented in my math language is the ability to call higher order functions.
+The functions that I implemented are <code>sum</code> and <code>product</code> which will take in a range and a single-variable function, <code>f</code>.
+<code>sum</code> will add up each value in the range plugged in to <code>f</code>. For example, <code>sum 2 5 sin</code> equates to <code>sin(2) + sin(3) + sin(4) + sin(5)</code>.
+<code>product</code> does the same as sum but for multiplication. The implementations of these function are pretty simple: just a for loop.
+And to get the function that is passed into the higher-order function, I just look it up in the scope of defined functions.</p></div></div></body>

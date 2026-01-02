@@ -1,0 +1,13 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>A Discrete Cantor Set</h1><p>2023-06-07</p><!---
+Tags:
+[:math]
+--><p>A couple of months ago, I participated in the <a href="https://science.iupui.edu/math/about/math-contest/index.html">IUPUI Highschool Mathematics Contest</a>
+which was an experience that I really enjoyed. The theme was fractals, and contestants had two and a half months to solve 4 problems and
+write an essay on the theme.</p><p>Problem 3, the problem that I found the most interesting, defines a function, <code>f: N -> N</code> (which just means <code>f</code> maps
+nonnegative integers to nonnegative integers) with the following recursive properties:</p><ul><li><code>f(0) = 1</code></li><li><code>f(3n) = f(n)</code></li><li><code>f(3n+1) = 0</code></li><li><code>f(3n+2) = f(n)</code></li></ul><p>The problem then asks for the sum of <code>f(n)</code> over all integers <code>0 <= n <= 10^23</code>.</p><p>Here is a table of some small values for <code>f(n)</code>:</p><table><thead><tr><th><code>n</code></th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr></thead><tbody><tr><td><code>f(n)</code></td><td>1</td><td>0</td><td>1</td><td>0</td><td>0</td><td>0</td><td>1</td><td>0</td><td>1</td></tr></tbody></table><p>I won't spoil the beautiful answer, but I will say that my strategy for solving this problem was to look
+at patterns in the sum of <code>f(n)</code> up to <code>3^k</code> and then use another pattern to make that useful for
+finding the sum up to <code>10^23</code></p><p>The real beauty is in the question, though. This is because the simple recursive definition of <code>f</code> is strongly linked
+to a popular fractal (probably could've guessed that by the theme of the contest), known as the <a href="https://en.wikipedia.org/wiki/Cantor_set">Cantor Set</a>.
+The Cantor Set relates to the set of real numbers on the interval [0,1] and is constructed by recursively removing
+the middle third of the interval(s). This problem can essentially be thought of as a discrete version of this
+Cantor Set since it is only defined for the natural numbers.</p></div></div></body>

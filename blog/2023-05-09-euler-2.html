@@ -1,0 +1,35 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Project Euler #2</h1><p>2023-05-09</p><p>A good way to hone one's skills in a particular programming language is to do
+a collection of exercises on <a href="https://projecteuler.net">Project Euler</a>.
+Project Euler is a popular website that hosts a
+set of fun challenges meant to be solved using programming. Problem 2, the
+focus of this post, asks the following of us:</p><p><code>By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.</code></p><p>A simple, straightforward, non-modular example of this in Clojure looks
+something like this:</p><pre><code class="language-clojure">(defn euler-2 [n]
+  (loop [i 1 j 1 acc 0]
+    (if (< j n)
+      (if (even? j)
+        (recur j (+ i j) (+ acc j))
+        (recur j (+ i j) acc))
+      acc)))
+</code></pre><p>But a more elegant and reusable solution would be:</p><pre><code class="language-clojure">(defn fibs
+  ([] (fibs 0 1))
+  ([n m] (cons (+ m n) (lazy-seq (fibs m (+ m n))))))
+
+(defn euler-2 [n]
+  (reduce + (filter even? (take-while #(< % n) (fibs)))))
+</code></pre><p>The <code>fibs</code> function returns an infinite lazy sequence of the
+Fibonacci numbers. This means we aren't adding the unnecessary time
+complexity of calculating the entire list of Fibonacci numbers up to
+four million and then sifting through that list.</p><p>An even better solution would be to avoid having to filter the even
+terms like so:</p><pre><code class="language-clojure">(defn even-fibs
+  ([] (even-fibs 0 2))
+  ([n m] (cons m (lazy-seq (even-fibs m (+ (* 4 m) n))))))
+
+(defn euler-2 [n]
+  (reduce + (take-while #(< % n) (even-fibs))))
+</code></pre><p>This solution relies on a pattern within the even Fibonacci numbers
+which can be seen as follows:</p><p>Let f(n) denote the nth Fibonacci number.</p><p>And let f<sub>2</sub>(n) denote the nth even Fibonacci number.</p><p>We know that f(n+2) = f(n+1) + f(n) by definition.</p><p>If you look at the sequence of Fibonacci numbers, you may see a pattern
+regarding the even numbers:</p><p>1 1 2 3 5 8 13 21 34 55 89 144</p><p>That is, that there is an even number every 3 terms.</p><p>We can show that this pattern repeats infinitely by seeing that
+at any given even number, the next number will be odd because the sum
+of an odd and even number is always odd. The same goes for the next number
+after that. But the sum of two odd numbers is even, which repeats the cycle.</p><p>A mathematical way to put this identity would be</p><p>f<sub>2</sub>(n) = f(3n)</p><p>And consequently,</p><p>f<sub>2</sub>(n+1) = f(3n+3)</p><p>f<sub>2</sub>(n+2) = f(3n+6)</p><p>By expanding these equalities with the Fibonacci definition and some algebra,
+we find that</p><p>f<sub>2</sub>(n+2) = 4f<sub>2</sub>(n+1) + f<sub>2</sub>(n)</p><p>Which is the identity used in the algorithm.</p></div></div></body>

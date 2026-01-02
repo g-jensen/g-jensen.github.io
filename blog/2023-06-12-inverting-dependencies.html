@@ -1,0 +1,13 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Inverting Dependencies</h1><p>2023-06-12</p><!---
+Tags:
+[:misc]
+--><p>In a personal project of mine, a game written in C++, I use a graphics library called <a href="https://www.sfml-dev.org/">SFML</a>
+to do all sorts of stuff like open a window or draw sprites. Throughout my time using SFML, I would
+sometimes feel uncomfortable with the surplus of unused functions and direct library<code>#include</code>s
+because I felt it took away from the modularity of my project. What if I switched to a different
+graphics library? A complete rewrite would be necessary.</p><p>Then I learned about the Dependency Inversion Principle. This led me to refactor my project in a way
+that I think really increases the cleanliness of the code.</p><p>Previously, I had a Game class and I would just use the RenderWindow class supplied by SFML to manage
+the window. Now, I have something that looks like this:</p><p><img alt="inverting.png" src="https://raw.githubusercontent.com/g-jensen/blog/main/assets/inverting.png" /></p><p>Where the Window class is actually an interface, and SFMLWindow merely implements the functions that
+I need to use with a window with SFML. This way I depend on abstractions rather than concretions. I can also now
+much more easily switch over to another graphics library because all I would have to do is add another
+class that implements Window's methods.</p></div></div></body>

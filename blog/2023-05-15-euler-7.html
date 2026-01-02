@@ -1,0 +1,61 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Project Euler #7</h1><p>2023-05-15</p><!---
+Tags:
+[:euler :clojure]
+--><p>The problem description of <a href="https://projecteuler.net/problem=7">Project Euler #7</a> is very simple and the minimum amount
+of work needed to just get the solution is not that much. The problem asks:</p><p><code>What is the 10,001st prime?</code></p><h1>Initial Solution</h1><p>My initial solution, although a bit naive, gets the job done relatively quickly for the small case:</p><pre><code class="language-clojure">(defn primes [n]
+  (loop [m 2 primes []]
+    (if (>= (count primes) n)
+      primes
+      (if (every? #(not= 0 (mod m %)) primes)
+        (recur (inc m) (conj primes m))
+        (recur (inc m) primes)))))
+
+(defn euler-7 [n]
+  (last (primes n)))
+</code></pre><pre><code class="language-clojure">(time (euler-7 10001))  ;"Elapsed time: 1275.52175 msecs"
+                        ;=> 104743
+(time (euler-7 100001)) ;"Elapsed time: 78250.286791 msecs"
+                        ;=> 1299721
+</code></pre><p>The idea of the <code>primes</code> function being to calculate the first n primes by using the primes that have already
+been calculated.</p><p>While this solution works, there is a lot to improve. Especially regarding time complexity.</p><h1>Structure</h1><p>One thing to do to enhance the structure of this code would be to remove the need for parameters in <code>primes</code> by returning
+an infinite <code>lazy-seq</code> of primes. A direct conversion looks something like this:</p><pre><code class="language-clojure">(defn lazy-primes
+  ([] (lazy-primes 2 []))
+  ([m primes] (if (every? #(not= 0 (mod m %)) primes)
+                (cons m (lazy-seq (lazy-primes (inc m) (conj primes m))))
+                (lazy-primes (inc m) primes))))
+</code></pre><p>This way our <code>euler-7</code> function looks like:</p><pre><code class="language-clojure">(defn euler-7 [n]
+  (nth (lazy-primes) (dec n)))
+</code></pre><pre><code class="language-clojure">(time (euler-7 10001))  ;"Elapsed time: 904.616083 msecs"
+                        ;=> 104743
+(time (euler-7 100001)) ;"Elapsed time: 101634.307375 msecs"
+                        ;=> 1299721
+</code></pre><p>A lot cleaner. A pinch faster for the small case. A lot slower for the big case.</p><h1>Speed</h1><p>An easy way to greatly increase the speed of the <code>lazy-primes</code> function is to replace the
+<code>(every? #(not= 0 (mod m %)) primes)</code> with a better way to check if a number is prime. One such way is this
+<code>prime?</code> function:</p><pre><code class="language-clojure">(defn prime? [n]
+  (cond
+    (<= n 1) false
+    (= n 2) true
+    :else (every? #(not= 0 (mod n %)) (range 2 (inc (Math/sqrt n))))))
+</code></pre><p>So <code>lazy-primes</code> looks like this:</p><pre><code class="language-clojure">(defn lazy-primes
+  ([] (lazy-primes 2 []))
+  ([m primes] (if (prime? m)
+                (cons m (lazy-seq (lazy-primes (inc m) (conj primes m))))
+                (lazy-primes (inc m) primes))))
+</code></pre><p>And performance looks like this:</p><pre><code class="language-clojure">(time (euler-7 10001))  ;"Elapsed time: 125.203 msecs"
+                        ;=> 104743
+(time (euler-7 100001)) ;"Elapsed time: 3076.132458 msecs"
+                        ;=> 1299721
+</code></pre><p>Much better. Especially for the big case.</p><p>Adding some more optimizations to the <code>prime?</code> function like so:</p><pre><code class="language-clojure">(defn prime? [n]
+  (cond
+    (<= n 1) false
+    (<= n 3) true
+    (zero? (mod n 2)) false
+    (zero? (mod n 3)) false
+    :else (every? #(and (not= 0 (mod n %))
+                        (not= 0 (mod n (+ 2 %))))
+                  (range 5 (inc (Math/sqrt n)) 6))))
+</code></pre><p>Yields a respectable runtime:</p><pre><code class="language-clojure">(time (euler-7 10001))  ;"Elapsed time: 52.351334 msecs"
+                        ;=> 104743
+(time (euler-7 100001)) ;"Elapsed time: 787.097375 msecs"
+                        ;=> 1299721
+</code></pre></div></div></body>

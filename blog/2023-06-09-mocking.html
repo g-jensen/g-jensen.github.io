@@ -1,0 +1,11 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Stubs in Speclj</h1><p>2023-06-09</p><!---
+Tags:
+[:clojure]
+--><p>When testing the user interface of a program, one can use stubs to redefine user input to be predetermined.</p><p>For testing in Clojure, I use <a href="https://github.com/slagyr/speclj">Speclj</a> which allows me to create and
+test stubs like so:</p><p>Add <code>(with-stubs)</code> before using stubs to make sure stub recoding is bound.</p><pre><code class="language-clojure">(with-stubs)
+</code></pre><p>Then use <code>(with-redefs)</code> to redefine a function to evaluate to whatever you want to simulate the user
+input to be.</p><pre><code class="language-clojure">(with-redefs [read-line (stub :read-line {:return "1"})]
+  (should= "1" (read-line))
+  (should-have-invoked :read-line))
+</code></pre><p>In this case, I redefine the <code>read-line</code> function to evaluate to "1".</p><p>Notice that after the test, I add <code>(should-have-invoked :read-line)</code>, which just tests if the
+stub actually worked.</p></div></div></body>

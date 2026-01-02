@@ -1,0 +1,26 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>C Unit Testing</h1><p>2024-07-12</p><p>During my second college semester studying pure math, I was taking a very entry level Computer Science course that went over the basics of Java and C++. The only homeworks were programs that would be due in about a week or two, so not too complex, but also not "Hello, World".</p><p>Because of my <a href="https://en.wikipedia.org/wiki/Extreme_programming">extreme programming</a> brainwashing, I needed to write all of homeworks with TDD. For the Java half of the course, the decision to use JUnit was pretty straightforward, especially because of my experience using it during my apprenticeship (see <a href="https://blog.gregjensen.dev/2023-07-18-new-project">math language</a>, <a href="https://blog.gregjensen.dev/2023-07-25-server-project">HTTP Server</a>).</p><p>However, during the C++ half of the course, the decision of what unit testing framework I would use was not so obvious. I did have some parameters, though:</p><ul><li>The easiest way to use it can't be Visual Studio (so basically it can't be <a href="https://learn.microsoft.com/en-us/visualstudio/test/how-to-use-microsoft-test-framework-for-cpp">Microsoft's C++ Test Framwork</a>)</li><li>It should be simple to set up with existing projects</li><li>Not bloated</li><li>I shouldn't have to manually add every test to a call list (essentially another file that tells the framework what tests to run)
+<ul><li>This ensures that TDD is fluid</li></ul></li></ul><p>After some light Googling, I was surprised to find nothing that met these criteria. So, I decided to make it myself.</p><h3>specc</h3><p><a href="https://github.com/g-jensen/specc">specc</a> is what I came up with and it meets all of the criteria. It's written entirely in C, but also works for C++. The framework is modeled after Micah Martin's <a href="https://github.com/slagyr/speclj/">speclj</a> for Clojure (which is based on <a href="http://rspec.info/">RSpec</a>). Here's some specc example code:</p><pre><code>// in file example.c
+#include "specc.h"
+
+module(simple, {
+  
+  describe("simple test", {
+    
+    it("this is what a passing test looks like", {
+      should(1 == 1);
+    });
+
+    it("failing boolean test", {
+      should(1 == 0);
+    });
+  });
+});
+</code></pre><p>Then I compile with specc:</p><pre><code>g++ -c specc.c
+g++ -c example.c
+g++ specc.o example.o
+./a.out
+</code></pre><p>And here's the output:
+<img alt="example output" src="https://raw.githubusercontent.com/g-jensen/specc/main/resources/simpler.png" /></p><p>And that's it. That's all you have to do.</p><p>If you're curious about how it works, I'll try to shed some light:</p><p>Q: How does the program even run? You never wrote a <code>main</code> function.<br />
+A: <code>specc.c</code> contains the entry point which runs the tests.</p><p>Q: But how does <code>specc.c</code> know what functions to call? You never copied the tests into a call list.<br />
+A: All of the functions shown in the example are really macros. The <code>module</code> macro defines a function with the given name and body. Then, <code>module</code> uses <a href="https://stackoverflow.com/questions/2053029/how-exactly-does-attribute-constructor-work"><code>__attribute__((constructor)) __construct_</code></a> to add that newly defined function to a linked list of functions that <code>specc.c</code> calls in <code>main</code>. This is the only way I know is possible to call 'dynamically' defined functions in C. It also shifts the problem of dependency load order to the compiler.</p><p>Q: I have another question<br />
+A: <a href="https://github.com/g-jensen/specc/">It's open source</a></p></div></div></body>

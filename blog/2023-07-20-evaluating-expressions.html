@@ -1,0 +1,11 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Evaluating Expressions</h1><p>2023-07-20</p><!---
+Tags:
+[:misc]
+--><p>Today, I created functionality to parse and evaluate prefix expressions in my <a href="https://gregjensen.dev/blog/2023/07/18/new-project.html">math language</a>.
+To parse, I created an ExpressionParser class that only has one public method and a couple private ones.
+The public method is <code>String[] getTokens(String input)</code> and it converts a string like <code>"(+ 23 9)"</code>
+into an array of strings like <code>["(","+","23","9",")"]</code>, this way it is easier to evaluate expressions
+which is what I created the functionality for next. To evaluate expressions, I made a hierarchy of
+<code>ExpressionNode</code>s like so:</p><p><img alt="class-diagram" src="https://raw.githubusercontent.com/g-jensen/blog/main/assets/ast.png" /></p><p>Then, to construct the tree of nodes, I just loop through the tokens and create a new node based on
+what the token is. When the tree is constructed, all I have to do to evaluate it is call <code>evaluate()</code> on
+the root node.</p></div></div></body>

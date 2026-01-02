@@ -1,0 +1,17 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>SQL Persistence in Clojure</h1><p>2023-06-27</p><!---
+Tags:
+[:clojure]
+--><p>Using SQLite for my TicTacToe game was surprisingly simple. It's very easy to add a package as a
+dependency through Leiningen. I simply had to add</p><pre><code>[org.clojure/java.jdbc "0.7.8"]
+[org.xerial/sqlite-jdbc "3.23.1"]
+</code></pre><p>to my dependency list and everything worked. SQLite was even preinstalled on my computer.</p><p>Implementing the functions needed for my TicTacToe game was also simple with SQLite.</p><p>To start modifying the database, define an SQL database object:</p><pre><code class="language-clojure">(def sql-db {:classname "org.sqlite.JDBC" :subprotocol "sqlite" :subname "games.db"})
+</code></pre><p>Some examples of creating tables, selecting entries, and deleting entries look like so:</p><pre><code class="language-clojure">(db-do-commands sql-db 
+                "CREATE TABLE IF NOT EXISTS GAMES
+                 (DATE text,
+                 BOARD blob,
+                 GAMEMODE blob)")
+
+(query sql-db ["select * from games"])
+
+(execute! sql-db ["DELETE FROM games WHERE date = ?" some-date])
+</code></pre></div></div></body>

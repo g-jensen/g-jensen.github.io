@@ -1,0 +1,13 @@
+<head><title>Greg Jensen's Blog</title><link href="/styles.css" rel="stylesheet" type="text/css" /></head><body><div class="center"><a href="https://gregjensen.dev">Home</a><a href="https://gregjensen.dev/math.html">Math</a><a href="mailto:greg.micah.jensen@gmail.com">Email</a><a href="https://gregjensen.dev/blog">Blog</a><a href="https://www.github.com/g-jensen">GitHub</a></div><div class="post"><div><h1>Console Commands</h1><p>2023-07-26</p><!---
+Tags:
+[:misc]
+--><p>When implementing command line options for my HTTP server project, I could have just put a couple
+if statements and called it a day since I only need two options: <code>-p <port></code> and <code>-r <rootDirectory></code>.
+I decided against this and instead, I made a nice abstraction for adding options in general. In a separate package called commandparser,
+I created a class that makes it possible to simply call <code>addCommand(name,defaultValue)</code> to add a command which
+will be added to a hashmap and updated once <code>parseTokens(tokens)</code> is called. It is also possible to add
+a <code>usage</code> message to a command with the <code>addUsage(command,message)</code> method. This makes it so that if there is an
+error when parsing the tokens, it will throw a BadUsageException with the usage message for the token that it found the error.
+For example, if I <code>addCommand("-p",80)</code> and then <code>addUsage("-p","-p <port>")</code>, if there is an error parsing the port (like if the value given is not a number),
+then it will throw and error with the message <code>"Bad Usage of -p. Usage: -p <port>"</code>. The same goes for the root directory. This
+way it will be easy to add more commands in the future if needed.</p></div></div></body>
